@@ -1,42 +1,17 @@
 <?php
 $module = new Controller();
 $module->Controll();
-/*
-echo '<PRE>';
-print_r($module);
-echo '</PRE>';
+$module = $module->data;
 
-$module = array(
-	'', 
-	'page',
-	'portfolio', 
-	'gallery', 
-	'library', 
-	'requisites', 
-        'contact', 
-	'webdesign', 
-	'imagedesign', 
-	'polygraphy', 
-	'sample', 
-	'graphics', 
-	'visualization', 
-        'modeling', 
-	'examples', 
-	'article', 
-	'book',
-        'personal');
-*/
-
-if($_GET)
+if($_GET['page'])
 {
     $page = $_GET['page'];
-    if (!array_search($page,$module))
+    if (!array_search($page, $module))
     {
         $page = 'error';
     }
-    $module = $_GET['module'];
 }
-else{
-  $page = 'page';  
-  $module = $_GET['module'];
+else
+{  
+    $page = 'page';
 }

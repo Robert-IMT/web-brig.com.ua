@@ -9,6 +9,11 @@ class Controller extends DB {
 	
     function Controll()
     {
-        $this->data = parent::Select('page');
+        $this->data = parent::Select('page','name');
+        for ($i=0; $i<count($array = $this->data); $i++)
+        {
+            $this->data[$i] = $array[$i]['name'];
+        }
+        array_unshift($this->data, '');
     }
 }
