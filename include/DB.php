@@ -4,7 +4,7 @@ class DB {
     private $user = "root";
     private $db_name = "db_web_brig";
     private $pass = "";
-    public $conn;
+    private $conn;
     
     public function __construct() {
        $this->conn = mysql_connect($this->host, $this->user, $this->pass);
@@ -20,8 +20,9 @@ class DB {
            $sql = "SELECT $row FROM $table $option";
         }
         $data = mysql_query($sql);
-        while($row = mysql_fetch_assoc($data)){
-           $array[]= $row;
+        while($row = mysql_fetch_assoc($data))
+        {
+           $array[] = $row;
         }
         return $array;
     }
