@@ -10,7 +10,7 @@ class Personal extends Menu {
     {
         $this->data = parent::Select('regform');
         $form = $this->data;
-        echo '<div class="regform">';
+        echo '<div class="regform"><form class="form-vertical" method="POST" action="">';
         for ($i=0;$i<count($form)-1;$i++)
         {
             echo '<input type="'.$form[$i]['type'].'" name="'.$form[$i]['name'].'" placeholder="'
@@ -20,8 +20,9 @@ class Personal extends Menu {
             {
                 echo ' *';
             }
+            echo '</br>';
         }
-        echo '</div>';
+        echo '</form></div>';
         $this->data = $form[$i];
     }   
     

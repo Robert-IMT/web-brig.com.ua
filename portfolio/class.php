@@ -1,8 +1,8 @@
 <?php
-class Page extends Menu {
+class Portfolio extends Menu {
     public $type;
     
-    public function __construct($type) {
+    public function __construct() {
         parent::__construct();
         $this->type = $type;
     }

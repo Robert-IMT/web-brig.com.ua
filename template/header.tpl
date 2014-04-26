@@ -31,8 +31,22 @@ else
 }
 ?>
             <div class="mode">
-                <a href="../?hd=ok" id="hd" title="HD режим">HD</a>
-                <a href="../?lq=ok" id="lq" title="LQ режим">LQ</a>
+                <a href="..
+<?php
+if ($_SERVER['REQUEST_URI'] == '/')
+echo $_SERVER['REQUEST_URI'].'?';
+else
+echo $_SERVER['REQUEST_URI'].'&';
+?>
+res=hd" id="hd" title="HD режим" method="POST">HD</a>
+                <a href="..
+<?php
+if ($_SERVER['REQUEST_URI'] == '/')
+echo $_SERVER['REQUEST_URI'].'?';
+else
+echo $_SERVER['REQUEST_URI'].'&';
+?>
+res=lq" id="lq" title="LQ режим">LQ</a>
             </div>
 <?php
 if ($title != 'page')
